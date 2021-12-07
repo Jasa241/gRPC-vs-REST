@@ -6303,19 +6303,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jasa2\\.nuget\\packages\\": {}
+    "C:\\Users\\JohanSanchez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Download\\asp.netgrpccert-master\\Cats\\Cats.csproj",
+      "projectUniqueName": "C:\\Projects\\Cats\\gRPC-vs-REST\\Cats\\Cats.csproj",
       "projectName": "Cats",
-      "projectPath": "D:\\Download\\asp.netgrpccert-master\\Cats\\Cats.csproj",
-      "packagesPath": "C:\\Users\\jasa2\\.nuget\\packages\\",
-      "outputPath": "D:\\Download\\asp.netgrpccert-master\\Cats\\obj\\",
+      "projectPath": "C:\\Projects\\Cats\\gRPC-vs-REST\\Cats\\Cats.csproj",
+      "packagesPath": "C:\\Users\\JohanSanchez\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\Cats\\gRPC-vs-REST\\Cats\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jasa2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JohanSanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6388,7 +6388,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

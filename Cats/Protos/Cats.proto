@@ -24,7 +24,7 @@ service Cats {
   }
   rpc EditCat (Cat) returns (Cat) {
     option (google.api.http) = {
-      put: "/v1/cats"
+      put: "/v1/cats/{id}"
       body:"*"
     };
   }

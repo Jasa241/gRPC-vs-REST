@@ -35,16 +35,30 @@ namespace grpcserver
         }
         public override Task<Cat> GetCat(CatId catId, ServerCallContext context)
         {
-            var cat = catContext.Cats.Find(catId.Id);
+            try
+            {
+                var cat = catContext.Cats.Find(catId.Id);
 
-            return Task.FromResult(cat);
+                return Task.FromResult(cat);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public override Task<Cat> CreateCat(Cat cat, ServerCallContext context)
         {
-            catContext.Cats.Add(cat);
-            catContext.SaveChanges();
+            try
+            {
+                catContext.Cats.Add(cat);
+                catContext.SaveChanges();
 
-            return Task.FromResult(cat);
+                return Task.FromResult(cat);
+            }
+            catch (Exception)
+            {
+                return Task.FromResult(cat);
+            }
         }
         public override Task<Cat> EditCat(Cat cat, ServerCallContext context)
         {

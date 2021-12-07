@@ -27,24 +27,7 @@ namespace grpcserver
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureKestrel(kerstrel =>
                     {
-                        kerstrel.Listen(IPAddress.Any, 5000,  o => o.Protocols = HttpProtocols.Http1AndHttp2);
-                        kerstrel.Listen(IPAddress.Any, 5001, listenOptions =>
-                        {
-                            var serverPath = AppDomain.CurrentDomain.BaseDirectory + "cert\\server.pfx";
-                            var serverCertificate = new X509Certificate2(serverPath, "123456789");
-                            var httpsConnectionAdapterOptions = new HttpsConnectionAdapterOptions()
-                            {
-                                ClientCertificateMode = ClientCertificateMode.AllowCertificate,
-                                SslProtocols = System.Security.Authentication.SslProtocols.Tls12,
-                                ClientCertificateValidation = (cer, chain, error) =>
-                                {   
-                                    return chain.Build(cer); 
-                                },
-                                ServerCertificate = serverCertificate
-                            };
-                            listenOptions.UseHttps(httpsConnectionAdapterOptions);
-                            listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
-                     });
+                        kerstrel.Listen(IPAddress.Any, 3000,  o => o.Protocols = HttpProtocols.Http1AndHttp2);
                     });
                 });
     }
