@@ -42,8 +42,16 @@ this request allows me to remove a breed of cats
 ```
 
 # gRPC and REST
+### REST
+
+REST APIs have a JSON or XML data response via the HTTP protocol.  REST APIs are presented to the user/client as a resource that can be accessed through the following HTTP commands: GET, DELETE, POST and PUT.
 
 ![Image API](https://www.imaginarycloud.com/blog/content/images/2021/06/API.png)
+
+### gRPC
+
+gRPC (Google Remote Procedure Call) y es una variante basada en la arquitectura RCP. Esta tecnología sigue la implementación de una API RPC que utiliza el protocolo HTTP 2.0, el objetivo de gRPC es agilizar las transmisiones de datos entre microservicios.
+
 ![Image gRPC](https://www.imaginarycloud.com/blog/content/images/2021/06/Streaming_gRPCvsREST.png)
 
 ## gRPC vs REST: comparison table
@@ -51,7 +59,7 @@ this request allows me to remove a breed of cats
 |Features| REST | gRPC     |
 |:-------  | :-------- | :------- |
 | **HTTP 1.1 vs HTTP 2**| Follows a request-response model of communication and is typically built on HTTP 1.1 | Follows a client-response model of communication and is built on HTTP 2, which allows for: streaming communication and bidirectional support |
-|**Streaming vs. Request/Response**|we can only perform a request and get a response kind of thing. This is due to the HTTP/1.1 protocol it uses for communication which is quite limited in various aspects of things.|we have known uses HTTP/2 for communication. Using TCP connection, HTTP/2 supports multiple data streaming from the server alongside the traditional request-response (Bi-directional streaming, Server streaming and Client streaming)|
+|**Streaming vs. Request/Response**|We can only make a request and get a response. This is due to the HTTP/1.1 protocol|gRPC uses TCP connection, HTTP/2 supports multiple data streams from the server along with traditional request-response (Bidirectional Streaming, Server Streaming and Client Streaming).|
 |**Payload Data Structure**|REST mainly relies on JSON or XML formats to send and receive data.|gRPC uses Protocol Buffer by default to serialize payload data.|
 |**Code Generation Features**|Developers must use a third-party tool like Swagger or Postman to produce code for API requests.|gRPC has native code generation features.|
 |**Browser Support**|Universal browser support.|Limited browser support. gRPC requires gRPC-web and a proxy layer to perform conversions between HTTP 1.1 and HTTP 2.|

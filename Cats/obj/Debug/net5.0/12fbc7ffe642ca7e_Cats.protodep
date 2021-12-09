@@ -1,5 +1,5 @@
 obj\Debug\net5.0\Protos/Cats.cs \
 obj\Debug\net5.0\Protos/CatsGrpc.cs: google/api/http.proto\
- C:/Users/JohanSanchez/.nuget/packages/grpc.tools/2.32.0/build/native/include/google/protobuf/descriptor.proto\
+ C:/Users/jasa2/.nuget/packages/grpc.tools/2.32.0/build/native/include/google/protobuf/descriptor.proto\
  google/api/annotations.proto\
  Protos/Cats.proto
