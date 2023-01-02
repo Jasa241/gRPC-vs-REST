@@ -27,7 +27,8 @@ namespace grpcserver
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureKestrel(kerstrel =>
                     {
-                        kerstrel.Listen(IPAddress.Any, 3000,  o => o.Protocols = HttpProtocols.Http1AndHttp2);
+                        kerstrel.Listen(IPAddress.Any, 3000,  o => o.Protocols = HttpProtocols.Http1);
+                        kerstrel.Listen(IPAddress.Any, 4000, o => o.Protocols = HttpProtocols.Http2);
                     });
                 });
     }

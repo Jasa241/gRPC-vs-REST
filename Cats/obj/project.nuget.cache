@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rEUtpI3jmvO7/6bV/vyNYUF+2YqdhP3USsHpTUnGCEfOvOtRLJ16HD8vcVRpWbxWxedRGbIJtKqNmb3t4aZZuQ==",
+  "dgSpecHash": "H8+c6hW7pc9Xscsgzt2xBCNyq7g2rDW7IGV01/jBzp8Aod4d0kCbmCUzFnP0dHNi92UYLim+ToQswJMrzAkOOQ==",
   "success": true,
-  "projectFilePath": "D:\\Download\\asp.netgrpccert-master\\cats\\Cats.csproj",
+  "projectFilePath": "D:\\Docs\\gRPC-vs-REST\\Cats\\Cats.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jasa2\\.nuget\\packages\\google.api.commonprotos\\2.2.0\\google.api.commonprotos.2.2.0.nupkg.sha512",
     "C:\\Users\\jasa2\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

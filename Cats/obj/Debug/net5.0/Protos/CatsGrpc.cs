@@ -44,42 +44,12 @@ namespace grpcserver {
 
     static readonly grpc::Marshaller<global::grpcserver.Empty> __Marshaller_greet_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpcserver.Empty.Parser));
     static readonly grpc::Marshaller<global::grpcserver.CatList> __Marshaller_greet_CatList = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpcserver.CatList.Parser));
-    static readonly grpc::Marshaller<global::grpcserver.CatId> __Marshaller_greet_CatId = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpcserver.CatId.Parser));
-    static readonly grpc::Marshaller<global::grpcserver.Cat> __Marshaller_greet_Cat = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpcserver.Cat.Parser));
 
     static readonly grpc::Method<global::grpcserver.Empty, global::grpcserver.CatList> __Method_GetCats = new grpc::Method<global::grpcserver.Empty, global::grpcserver.CatList>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetCats",
         __Marshaller_greet_Empty,
-        __Marshaller_greet_CatList);
-
-    static readonly grpc::Method<global::grpcserver.CatId, global::grpcserver.Cat> __Method_GetCat = new grpc::Method<global::grpcserver.CatId, global::grpcserver.Cat>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "GetCat",
-        __Marshaller_greet_CatId,
-        __Marshaller_greet_Cat);
-
-    static readonly grpc::Method<global::grpcserver.Cat, global::grpcserver.Cat> __Method_CreateCat = new grpc::Method<global::grpcserver.Cat, global::grpcserver.Cat>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "CreateCat",
-        __Marshaller_greet_Cat,
-        __Marshaller_greet_Cat);
-
-    static readonly grpc::Method<global::grpcserver.Cat, global::grpcserver.Cat> __Method_EditCat = new grpc::Method<global::grpcserver.Cat, global::grpcserver.Cat>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "EditCat",
-        __Marshaller_greet_Cat,
-        __Marshaller_greet_Cat);
-
-    static readonly grpc::Method<global::grpcserver.CatId, global::grpcserver.CatList> __Method_DeleteCat = new grpc::Method<global::grpcserver.CatId, global::grpcserver.CatList>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "DeleteCat",
-        __Marshaller_greet_CatId,
         __Marshaller_greet_CatList);
 
     /// <summary>Service descriptor</summary>
@@ -97,26 +67,6 @@ namespace grpcserver {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::grpcserver.Cat> GetCat(global::grpcserver.CatId request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::grpcserver.Cat> CreateCat(global::grpcserver.Cat request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::grpcserver.Cat> EditCat(global::grpcserver.Cat request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::grpcserver.CatList> DeleteCat(global::grpcserver.CatId request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -124,11 +74,7 @@ namespace grpcserver {
     public static grpc::ServerServiceDefinition BindService(CatsBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetCats, serviceImpl.GetCats)
-          .AddMethod(__Method_GetCat, serviceImpl.GetCat)
-          .AddMethod(__Method_CreateCat, serviceImpl.CreateCat)
-          .AddMethod(__Method_EditCat, serviceImpl.EditCat)
-          .AddMethod(__Method_DeleteCat, serviceImpl.DeleteCat).Build();
+          .AddMethod(__Method_GetCats, serviceImpl.GetCats).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -138,10 +84,6 @@ namespace grpcserver {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CatsBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetCats, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpcserver.Empty, global::grpcserver.CatList>(serviceImpl.GetCats));
-      serviceBinder.AddMethod(__Method_GetCat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpcserver.CatId, global::grpcserver.Cat>(serviceImpl.GetCat));
-      serviceBinder.AddMethod(__Method_CreateCat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpcserver.Cat, global::grpcserver.Cat>(serviceImpl.CreateCat));
-      serviceBinder.AddMethod(__Method_EditCat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpcserver.Cat, global::grpcserver.Cat>(serviceImpl.EditCat));
-      serviceBinder.AddMethod(__Method_DeleteCat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpcserver.CatId, global::grpcserver.CatList>(serviceImpl.DeleteCat));
     }
 
   }

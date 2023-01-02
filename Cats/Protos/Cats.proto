@@ -1,36 +1,16 @@
 syntax = "proto3";
 
 import "google/api/annotations.proto";
+
 option csharp_namespace = "grpcserver";
 
 package greet;
 
 service Cats {
-  rpc GetCats (Empty) returns (CatList) {
+  rpc GetCats (Empty) returns (CatList)
+  {
     option (google.api.http) = {
-      get: "/v1/cats"
-    };
-  }
-  rpc GetCat (CatId) returns (Cat) {
-    option (google.api.http) = {
-      get: "/v1/cats/{id}"
-    };
-  }
-  rpc CreateCat (Cat) returns (Cat) {
-    option (google.api.http) = {
-      post: "/v1/cats"
-      body: "*"
-    };
-  }
-  rpc EditCat (Cat) returns (Cat) {
-    option (google.api.http) = {
-      put: "/v1/cats/{id}"
-      body:"*"
-    };
-  }
-  rpc DeleteCat (CatId) returns (CatList) {
-    option (google.api.http) = {
-      delete: "/v1/cats/{id}"
+      get: "/v1/cats"  
     };
   }
 }

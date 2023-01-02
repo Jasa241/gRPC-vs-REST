@@ -23,6 +23,8 @@ namespace grpcserver
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+
             services.AddGrpcHttpApi();
           
             services.AddCors(o => o.AddPolicy("AllowAll", builder =>
@@ -49,6 +51,7 @@ namespace grpcserver
             app.UseCors("AllowAll");
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapGrpcService<CatService>();
 
                 endpoints.MapGet("/", async context =>
